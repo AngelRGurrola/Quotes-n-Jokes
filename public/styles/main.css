@@ -11,7 +11,16 @@ body {
 }
 
 .title {
+    color: #fff;
     text-align: center;
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #ff0000, /* Primary glow color */
+    0 0 20px #ff0000,
+    0 0 25px #ff0000,
+    0 0 30px #ff0000,
+    0 0 35px #ff0000
 }
 
 .nav-container {
@@ -41,7 +50,7 @@ body {
     flex: 1;
 }
 
-.nav-container a {
+a {
   text-decoration: none;   /* remove underline */
   color: inherit;          /* same color as text */
   background: none;        /* no background */
@@ -117,5 +126,25 @@ body {
     0 0 35px #FFEA1C
 }
 
+.card {
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    background-color: #06F906;
+    box-shadow: 0px 0px 25px 15px #003B00;
+}
 
+.card-body {
+    background-color: black;
+    height: 50vh;
+}
+
+.card-text {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #00FF41;
+    white-space: pre-wrap;
+}
 

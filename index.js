@@ -7,7 +7,10 @@ const app = express();
 app.use(express.static("public"));
 
 app.get("/", (req,res) => {
-    res.render("index.ejs", { activePage: "/" });
+    res.render("index.ejs", { 
+        activePage: "/",
+        dynamicText: "He who is fixed to a star does not change his mind."
+     });
 });
 
 app.get("/iq", (req,res) => {

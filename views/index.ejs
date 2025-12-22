@@ -1,3 +1,14 @@
 <%- include("partials/header.ejs") %>
 
+<% if (locals.dynamicText) { %>
+<div class="card">
+    <% if (locals.dynamicImage) { %>
+  <img src="..." class="card-img-top" alt="...">
+    <% } %>
+  <div class="card-body">
+    <p class="card-text" id="typed-text" data-text="<%= dynamicText %>"></p>
+  </div>
+</div>
+<% } %>
+
 <%- include("partials/footer.ejs") %>
