@@ -1,0 +1,121 @@
+body {
+    background-color: black;
+}
+
+.header {
+    font-family: Science Gothic;
+    display: grid;
+    grid-column: auto;
+    grid-row: auto auto;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.nav-container {
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    height: 10vh;
+}
+
+@media (max-width: 800px) {
+    .nav-container {
+        margin-top: 3rem;
+        text-align: center;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: start;
+        align-items: center;
+    }
+}
+
+.nav1,
+.nav2,
+.nav3,
+.nav4,
+.nav5 {
+    flex: 1;
+}
+
+.nav-container a {
+  text-decoration: none;   /* remove underline */
+  color: inherit;          /* same color as text */
+  background: none;        /* no background */
+}
+
+.nav1 a.active {
+  color: #fff; /* subtle highlight */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #1A41F0, /* Primary glow color */
+    0 0 20px #1A41F0,
+    0 0 25px #1A41F0,
+    0 0 30px #1A41F0,
+    0 0 35px #1A41F0
+}
+
+.nav2 a.active {
+  color: #fff; /* subtle highlight */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #06F906, /* Primary glow color */
+    0 0 20px #06F906,
+    0 0 25px #06F906,
+    0 0 30px #06F906,
+    0 0 35px #06F906
+}
+
+.nav3 a.active {
+  color: #fff; /* subtle highlight */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #FF00FA, /* Primary glow color */
+    0 0 20px #FF00FA,
+    0 0 25px #FF00FA,
+    0 0 30px #FF00FA,
+    0 0 35px #FF00FA
+}
+
+.nav4 a.active {
+  color: #fff; /* subtle highlight */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #1BF9FB, /* Primary glow color */
+    0 0 20px #1BF9FB,
+    0 0 25px #1BF9FB,
+    0 0 30px #1BF9FB,
+    0 0 35px #1BF9FB
+}
+
+.nav5 a.active {
+  color: #fff; /* subtle highlight */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #FFEA1C, /* Primary glow color */
+    0 0 20px #FFEA1C,
+    0 0 25px #FFEA1C,
+    0 0 30px #FFEA1C,
+    0 0 35px #FFEA1C
+}
+
+
+

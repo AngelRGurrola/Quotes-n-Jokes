@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&J</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <div class="title">
+                <h1>Quotes & Jokes</h1>
+            </div>
+            <div class="nav-container">
+                <div class="nav1"><h5><a class="<%= activePage === 'iq' ? 'active' : '' %>" href="/iq">Inspiration Quote</a></h5></div>
+                <div class="nav2"><h5><a class="<%= activePage === 'pq' ? 'active' : '' %>" href="/pq">Programming Quote</a></h5></div>
+                <div class="nav3"><h5><a class="<%= activePage === 'j' ? 'active' : '' %>" href="/j">Jokes</a></h5></div>
+                <div class="nav4"><h5><a class="<%= activePage === 'dj' ? 'active' : '' %>" href="/dj">Dad Jokes</a></h5></div>
+                <div class="nav5"><h5><a class="<%= activePage === 'cnj' ? 'active' : '' %>" href="/cnj">Chuck Norris Jokes</a></h5></div>
+            </div>
+        </div>
