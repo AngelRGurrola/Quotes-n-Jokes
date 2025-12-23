@@ -1,5 +1,5 @@
 const el = document.getElementById("typed-text");
-const text = el.dataset.text;
+const text = (el.dataset.text || "").trim() || "No quote available";
 let i = 0;
 
 function type() {
