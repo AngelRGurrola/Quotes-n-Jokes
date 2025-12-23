@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.get("/iq", async (req, res) => {
     try {
-        const result = await axios.get("https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en")
+        const result = await axios.get("https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en");
         const author = result.data.quoteAuthor !== '' ? result.data.quoteAuthor : '?';
         const content = `${result.data.quoteText} -${author}`;
         res.render("index.ejs", {
@@ -29,19 +29,94 @@ app.get("/iq", async (req, res) => {
 });
 
 app.get('/pq', async (req, res) => {
-        res.render("index.ejs", { activePage: "pq" })
+    try {
+        const result = await axios.get("https://programming-quotes-api-pi.vercel.app/quotes/random");
+        const author = result.data.author !== '' ? result.data.author : '?';
+        const content = `${result.data.en} -${author}`;
+        res.render("index.ejs", {
+            activePage: "pq",
+            dynamicText: content
+        });
+    } catch (error) {
+        console.log(error.response.data);
+        res.status(500);
+    }
 });
 
-app.get("/j", (req, res) => {
-    res.render("index.ejs", { activePage: "j" });
+app.get("/j", async (req, res) => {
+    try {
+        const result = await axios.get("https://v2.jokeapi.dev/joke/any");
+        let content;
+
+        if (result.data.type === 'twopart') {
+            content = `${result.data.setup}                 ...${result.data.delivery}`;
+        } else {
+            content = `${result.data.joke}`;
+        }
+
+        res.render("index.ejs", {
+            activePage: "j",
+            dynamicText: content
+        });
+    } catch (error) {
+        if (error.response) {
+            console.error("API error:", error.response.status);
+        } else {
+            console.error("Request error:", error.message);
+        }
+
+        res.status(500).render("index.ejs", {
+            activePage: "j",
+            dynamicText: "Could not load joke."
+        });
+    }
 });
 
-app.get("/dj", (req, res) => {
-    res.render("index.ejs", { activePage: "dj" });
+app.get("/dj", async (req, res) => {
+    try {
+        const config = {
+            headers: { Accept: "application/json" },
+        };
+        const result = await axios.get("https://icanhazdadjoke.com/", config);
+        const content = result.data.joke;
+        res.render("index.ejs", {
+            activePage: "dj",
+            dynamicText: content
+        });
+    } catch (error) {
+        if (error.response) {
+            console.error("API error:", error.response.status);
+        } else {
+            console.error("Request error:", error.message);
+        }
+
+        res.status(500).render("index.ejs", {
+            activePage: "j",
+            dynamicText: "Could not load joke."
+        });
+    }
 });
 
-app.get("/cnj", (req, res) => {
-    res.render("index.ejs", { activePage: "cnj" });
+app.get("/cnj", async (req, res) => {
+    try {
+        const result = await axios.get("https://api.chucknorris.io/jokes/random");
+        const content = result.data.value;
+        res.render("index.ejs", {
+            activePage: "dj",
+            dynamicText: content
+        });
+    } catch (error) {
+        if (error.response) {
+            console.error("API error:", error.response.status);
+        } else {
+            console.error("Request error:", error.message);
+        }
+
+        res.status(500).render("index.ejs", {
+            activePage: "j",
+            dynamicText: "Could not load joke."
+        });
+    }
 });
 
 app.listen(port, () => {

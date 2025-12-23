@@ -164,3 +164,7 @@ a {
     color: #00FF41;
     white-space: pre-wrap;
 }
+
+#typed-text {
+    white-space: pre-line;
+}
