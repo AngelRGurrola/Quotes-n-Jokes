@@ -6,6 +6,8 @@ const app = express();
 
 app.use(express.static("public"));
 
+let imgNum = 0;
+
 app.get("/", (req, res) => {
     res.render("index.ejs", {
         activePage: "/",
@@ -16,11 +18,18 @@ app.get("/", (req, res) => {
 app.get("/iq", async (req, res) => {
     try {
         const result = await axios.get("https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en");
+
         const author = result.data.quoteAuthor !== '' ? result.data.quoteAuthor : '?';
         const content = `${result.data.quoteText} -${author}`;
+
+
+        imgNum = Math.floor(Math.random() * 10) + 1;
+        const image = `/images/iq-${imgNum}.jpg`;
+
         res.render("index.ejs", {
             activePage: "iq",
-            dynamicText: content
+            dynamicText: content,
+            dynamicImage: image
         });
     } catch (error) {
         console.log(error.response.data);
@@ -33,9 +42,14 @@ app.get('/pq', async (req, res) => {
         const result = await axios.get("https://programming-quotes-api-pi.vercel.app/quotes/random");
         const author = result.data.author !== '' ? result.data.author : '?';
         const content = `${result.data.en} -${author}`;
+
+        imgNum = Math.floor(Math.random() * 10) + 1;
+        const image = `/images/pq-${imgNum}.jpg`;
+
         res.render("index.ejs", {
             activePage: "pq",
-            dynamicText: content
+            dynamicText: content,
+            dynamicImage: image
         });
     } catch (error) {
         console.log(error.response.data);
@@ -54,9 +68,13 @@ app.get("/j", async (req, res) => {
             content = `${result.data.joke}`;
         }
 
+        imgNum = Math.floor(Math.random() * 10) + 1;
+        const image = `/images/j-${imgNum}.jpg`;
+
         res.render("index.ejs", {
             activePage: "j",
-            dynamicText: content
+            dynamicText: content,
+            dynamicImage: image
         });
     } catch (error) {
         if (error.response) {
@@ -79,9 +97,14 @@ app.get("/dj", async (req, res) => {
         };
         const result = await axios.get("https://icanhazdadjoke.com/", config);
         const content = result.data.joke;
+
+        imgNum = Math.floor(Math.random() * 10) + 1;
+        const image = `/images/dj-${imgNum}.jpg`;
+
         res.render("index.ejs", {
             activePage: "dj",
-            dynamicText: content
+            dynamicText: content,
+            dynamicImage: image
         });
     } catch (error) {
         if (error.response) {
@@ -101,9 +124,14 @@ app.get("/cnj", async (req, res) => {
     try {
         const result = await axios.get("https://api.chucknorris.io/jokes/random");
         const content = result.data.value;
+
+        imgNum = Math.floor(Math.random() * 10) + 1;
+        const image = `/images/cnj-${imgNum}.jpg`;
+
         res.render("index.ejs", {
-            activePage: "dj",
-            dynamicText: content
+            activePage: "cnj",
+            dynamicText: content,
+            dynamicImage: image
         });
     } catch (error) {
         if (error.response) {
