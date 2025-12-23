@@ -13,8 +13,14 @@ app.get("/", (req,res) => {
      });
 });
 
-app.get("/iq", (req,res) => {
-    res.render("index.ejs", { activePage: "iq" });
+app.get("/iq", async (req,res) => {
+    const result = await axios.get("https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en")
+    const author = result.data.quoteAuthor !== '' ? result.data.quoteAuthor : '?';
+    const content = `${result.data.quoteText} -${author}`;
+    res.render("index.ejs", { 
+        activePage: "iq",
+        dynamicText: content
+    });
 });
 
 app.get("/pq", (req,res) => {
