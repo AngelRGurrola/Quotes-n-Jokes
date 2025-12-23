@@ -11,16 +11,18 @@ body {
 }
 
 .title {
+    margin-top: 2rem;
     color: #fff;
     text-align: center;
     text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #ff0000, /* Primary glow color */
-    0 0 20px #ff0000,
-    0 0 25px #ff0000,
-    0 0 30px #ff0000,
-    0 0 35px #ff0000
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #ff0000,
+        /* Primary glow color */
+        0 0 20px #ff0000,
+        0 0 25px #ff0000,
+        0 0 30px #ff0000,
+        0 0 35px #ff0000
 }
 
 .nav-container {
@@ -29,11 +31,13 @@ body {
     justify-content: flex-start;
     justify-content: center;
     height: 10vh;
+    margin-top: 2rem;
+
 }
 
 @media (max-width: 800px) {
     .nav-container {
-        margin-top: 3rem;
+        margin-top: 2rem;
         text-align: center;
         flex-direction: column;
         align-items: flex-start;
@@ -51,79 +55,92 @@ body {
 }
 
 a {
-  text-decoration: none;   /* remove underline */
-  color: inherit;          /* same color as text */
-  background: none;        /* no background */
+    text-decoration: none;
+    /* remove underline */
+    color: inherit;
+    /* same color as text */
+    background: none;
+    /* no background */
 }
 
 .nav1 a.active {
-  color: #fff; /* subtle highlight */
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #1A41F0, /* Primary glow color */
-    0 0 20px #1A41F0,
-    0 0 25px #1A41F0,
-    0 0 30px #1A41F0,
-    0 0 35px #1A41F0
+    color: #fff;
+    /* subtle highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #1A41F0,
+        /* Primary glow color */
+        0 0 20px #1A41F0,
+        0 0 25px #1A41F0,
+        0 0 30px #1A41F0,
+        0 0 35px #1A41F0
 }
 
 .nav2 a.active {
-  color: #fff; /* subtle highlight */
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #06F906, /* Primary glow color */
-    0 0 20px #06F906,
-    0 0 25px #06F906,
-    0 0 30px #06F906,
-    0 0 35px #06F906
+    color: #fff;
+    /* subtle highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #06F906,
+        /* Primary glow color */
+        0 0 20px #06F906,
+        0 0 25px #06F906,
+        0 0 30px #06F906,
+        0 0 35px #06F906
 }
 
 .nav3 a.active {
-  color: #fff; /* subtle highlight */
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #FF00FA, /* Primary glow color */
-    0 0 20px #FF00FA,
-    0 0 25px #FF00FA,
-    0 0 30px #FF00FA,
-    0 0 35px #FF00FA
+    color: #fff;
+    /* subtle highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #FF00FA,
+        /* Primary glow color */
+        0 0 20px #FF00FA,
+        0 0 25px #FF00FA,
+        0 0 30px #FF00FA,
+        0 0 35px #FF00FA
 }
 
 .nav4 a.active {
-  color: #fff; /* subtle highlight */
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #1BF9FB, /* Primary glow color */
-    0 0 20px #1BF9FB,
-    0 0 25px #1BF9FB,
-    0 0 30px #1BF9FB,
-    0 0 35px #1BF9FB
+    color: #fff;
+    /* subtle highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #1BF9FB,
+        /* Primary glow color */
+        0 0 20px #1BF9FB,
+        0 0 25px #1BF9FB,
+        0 0 30px #1BF9FB,
+        0 0 35px #1BF9FB
 }
 
 .nav5 a.active {
-  color: #fff; /* subtle highlight */
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 15px #FFEA1C, /* Primary glow color */
-    0 0 20px #FFEA1C,
-    0 0 25px #FFEA1C,
-    0 0 30px #FFEA1C,
-    0 0 35px #FFEA1C
+    color: #fff;
+    /* subtle highlight */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #FFEA1C,
+        /* Primary glow color */
+        0 0 20px #FFEA1C,
+        0 0 25px #FFEA1C,
+        0 0 30px #FFEA1C,
+        0 0 35px #FFEA1C
 }
 
 .card {
@@ -142,9 +159,8 @@ a {
 
 .card-text {
     text-align: center;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
     color: #00FF41;
     white-space: pre-wrap;
 }
-
