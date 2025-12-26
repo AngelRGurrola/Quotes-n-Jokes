@@ -7,11 +7,13 @@ const app = express();
 app.use(express.static("public"));
 
 let imgNum = 0;
+let presentYear = new Date().getFullYear();
 
 app.get("/", (req, res) => {
     res.render("index.ejs", {
+        currentYear: presentYear,
         activePage: "/",
-        dynamicText: "He who is fixed to a star does not change his mind."
+        dynamicText: "Select a quote or a joke!"
     });
 });
 
@@ -27,6 +29,7 @@ app.get("/iq", async (req, res) => {
         const image = `/images/iq-${imgNum}.jpg`;
 
         res.render("index.ejs", {
+            currentYear: presentYear,
             activePage: "iq",
             dynamicText: content,
             dynamicImage: image
@@ -47,6 +50,7 @@ app.get('/pq', async (req, res) => {
         const image = `/images/pq-${imgNum}.jpg`;
 
         res.render("index.ejs", {
+            currentYear: presentYear,
             activePage: "pq",
             dynamicText: content,
             dynamicImage: image
@@ -72,6 +76,7 @@ app.get("/j", async (req, res) => {
         const image = `/images/j-${imgNum}.jpg`;
 
         res.render("index.ejs", {
+            currentYear: presentYear,
             activePage: "j",
             dynamicText: content,
             dynamicImage: image
@@ -102,6 +107,7 @@ app.get("/dj", async (req, res) => {
         const image = `/images/dj-${imgNum}.jpg`;
 
         res.render("index.ejs", {
+            currentYear: presentYear,
             activePage: "dj",
             dynamicText: content,
             dynamicImage: image
@@ -129,6 +135,7 @@ app.get("/cnj", async (req, res) => {
         const image = `/images/cnj-${imgNum}.jpg`;
 
         res.render("index.ejs", {
+            currentYear: presentYear,
             activePage: "cnj",
             dynamicText: content,
             dynamicImage: image
